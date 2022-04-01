@@ -94,19 +94,32 @@ let arrayComputadorIds = []
 
  ///
 
-console.log(arrayComputador)
+// console.log(arrayComputador)
 
 function sortear(){
-    let arr = [azul, verde, amarelo, vermelho]
-    let cor1 = Math.floor(Math.random() * arr.length)
-    arr[cor1].classList.add('bordaWhite')
-    setTimeout(()=>{
-        arr[cor1].classList.remove('bordaWhite')
-            
-    }, 1000)
 
+    if(arrayComputador.length > 6){
+        alert('Você venceu, parabéns!')
+    arrayComputador.splice(0, arrayComputador.length)
+    arrayUsuario.splice(0, arrayUsuario.length)
+    arrayComputadorIds.splice(0, arrayUsuario.length)
+
+    }else{
+
+        let arr = [azul, verde, amarelo, vermelho]
+        let cor1 = Math.floor(Math.random() * arr.length)
+            
+        setTimeout(() => {
+            arr[cor1].classList.add('bordaWhite')
+        }, 3030);
+        setTimeout(()=>{
+            arr[cor1].classList.remove('bordaWhite')
+        }, 3260)
     
-    arrayComputador.push(arr[cor1].id)
+        
+        arrayComputador.push(arr[cor1].id)
+    }
+
 
 }
 
@@ -125,15 +138,21 @@ function jogadaUsuario(evento){
 
 function submeterJogada(evento){
     arrayComputadorIds.splice(0, arrayUsuario.length)
-//    console.log(evento)
-//    console.log(evento.target)
+
+    if(arrayComputador < arrayUsuario){
+        alert('Jogada invalida!Inicie o jogo antes de submeter sua jogada.')
+        arrayUsuario.splice(0, arrayUsuario.length)
+        arrayComputadorIds.splice(0, arrayUsuario.length)
+        arrayComputador.splice(0, arrayUsuario.length)
+    } else{
+
+        for(let i = 0; i <= arrayComputador.length -1; i++){
+          console.log(arrayComputadorIds.push(parseInt(arrayComputador[i])))
+        }
+        // console.log(arrayComputadorIds)
     
-
-    for(let i = 0; i <= arrayComputador.length -1; i++){
-      console.log(arrayComputadorIds.push(parseInt(arrayComputador[i])))
     }
-    console.log(arrayComputadorIds)
-
+    
     compararSequencias(arrayComputador,arrayUsuario )
 
 }
@@ -141,18 +160,20 @@ function submeterJogada(evento){
 function compararSequencias(arr1, arr2){
     console.log(arr1)
     console.log(arr2)
-    if(arrayComputador < 1){
-        alert('JOgada invalida!Inicie o jogo antes de fazer a sua jogada.')
+    if(arrayComputador < 0){
+        alert('Jogada invalida!Inicie o jogo antes de submeter sua jogada.')
         arrayUsuario.splice(0, arrayUsuario.length)
         arrayComputadorIds.splice(0, arrayUsuario.length)
         arrayComputador.splice(0, arrayUsuario.length)
 
     }else{
+
+    
         const resposta = arr1.length === arr2.length && arr1.every((value, index) => value == arr2[index])
         console.log(resposta)
         aumentarSequencia(resposta)
     }
-}
+ }
 
 
 
@@ -174,7 +195,7 @@ function aumentarSequencia(resposta){
 
 
 let arrayQuadrado = []
-console.log(arrayQuadrado)
+// console.log(arrayQuadrado)
 
 function transform(){
     const quadrado = document.querySelectorAll('.box')
@@ -187,19 +208,113 @@ function transform(){
 transform()
 
 function mostrarSequencia(){
-    for(let i = 0; i < arrayComputadorIds.length; i++){
-                let corAtual = arrayComputadorIds[i]
-                console.log(corAtual)
+    for(let i = 0; i <= arrayComputadorIds.length; i++){
 
-                const box = arrayQuadrado.find((index) => index.id == corAtual)
-                console.log(box)
+                arrayComputadorIds.forEach(function(currentValue, index) {
+                    switch(index) {
+                        case 0:
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                 box.classList.add("bordaWhite")
+                                //  box.classList.remove("bordaWhite")
+                                
+                            }, 230);
+
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                //  box.classList.add("bordaWhite")
+                                 box.classList.remove("bordaWhite")
+                            }, 460);
+                            break;
+                        case 1:
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                 box.classList.add("bordaWhite")
+                                //  box.classList.remove("bordaWhite")
+                                
+                            }, 690);
+
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                //  box.classList.add("bordaWhite")
+                                 box.classList.remove("bordaWhite")
+                            }, 920);
+                            break;
+                            case 2:
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                 box.classList.add("bordaWhite")
+                                //  box.classList.remove("bordaWhite")
+                                
+                            }, 1150);
+
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                //  box.classList.add("bordaWhite")
+                                 box.classList.remove("bordaWhite")
+                            }, 1380);
+                            break;
+                            case 3:
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                 box.classList.add("bordaWhite")
+                                //  box.classList.remove("bordaWhite")
+                                
+                            }, 1610);
+
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                //  box.classList.add("bordaWhite")
+                                 box.classList.remove("bordaWhite")
+                            }, 1840);
+                            break;
+                            case 4:
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                 box.classList.add("bordaWhite")
+                                //  box.classList.remove("bordaWhite")
+                                
+                            }, 2070);
+
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                //  box.classList.add("bordaWhite")
+                                 box.classList.remove("bordaWhite")
+                            }, 2300);
+                            break;
+                            case 5:
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                box.classList.add("bordaWhite")
+                                    //  box.classList.remove("bordaWhite")
+                                    
+                                }, 2530);
+    
+                            setTimeout(function() {
+                                let box = arrayQuadrado.find((indexx) => indexx.id == arrayComputadorIds[index])
+                                console.log(box.id)
+                                 //  box.classList.add("bordaWhite")
+                                box.classList.remove("bordaWhite")
+                                }, 2800);
+                            break; 
+                          
+                    }
+                    
+                });
                 
-
+    }
 }
-}
-
-
-
 
 function começarJogo(evento){
     arrayComputador.splice(0, arrayComputador.length)
@@ -207,5 +322,4 @@ function começarJogo(evento){
     arrayComputadorIds.splice(0, arrayUsuario.length)
     console.log(evento)
     sortear()
-
 }
