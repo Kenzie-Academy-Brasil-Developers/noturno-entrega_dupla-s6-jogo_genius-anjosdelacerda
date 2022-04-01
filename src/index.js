@@ -78,12 +78,11 @@ let verde    = document.querySelector('.divVerde')
 let amarelo  = document.querySelector('.divAmarelo')
 let vermelho = document.querySelector('.divVermelho')
 
-// const box = document.querySelectorAll('.box')
-// console.log(box)
-// box.addEventListener('click', jogadaUsuario)
+
 
 const arrayComputador = []
 const arrayUsuario = []
+const arrayComputadorIds = []
 
 //*** 
 //APERTA BOTÃO COMEÇAR JOGO => SORTEIO => COR DO ARRAY => ARRAYCOMP. 
@@ -100,7 +99,6 @@ console.log(arrayComputador)
 function sortear(){
     let arr = [azul, verde, amarelo, vermelho]
     let cor1 = Math.floor(Math.random() * arr.length)
-    console.log(cor1)
     arr[cor1].classList.add('bordaWhite')
     setTimeout(()=>{
         arr[cor1].classList.remove('bordaWhite')
@@ -113,24 +111,28 @@ function sortear(){
 }
 
 function jogadaUsuario(evento){
-    // console.log(evento)
-    // console.log(evento.target)
-    console.log(evento.target.id)
+    
     const cor = evento.target.id
+    evento.target.classList.add('bordaWhite')
     arrayUsuario.push(cor)
-    console.log(arrayUsuario)
+   
+    setTimeout(()=>{
+        evento.target.classList.remove('bordaWhite')
+            
+    }, 1000)
 
 }
 
 function submeterJogada(evento){
-    evento.target
+    arrayComputadorIds.splice(0, arrayUsuario.length)
+//    console.log(evento)
+//    console.log(evento.target)
     
-    const arrayNumerizado = []
 
-    for(let i = 0; i < arrayUsuario.length; i++){
-        arrayNumerizado.push(parseInt(arrayUsuario[i]))
+    for(let i = 0; i <= arrayComputador.length -1; i++){
+      console.log(arrayComputadorIds.push(parseInt(arrayComputador[i])))
     }
-    console.log(arrayNumerizado)
+    console.log(arrayComputadorIds)
 
     compararSequencias(arrayUsuario, arrayComputador)
 
@@ -142,31 +144,76 @@ function compararSequencias(arr1, arr2){
     if(arrayComputador < 1){
         alert('JOgada invalida!Inicie o jogo antes de fazer a sua jogada.')
         arrayUsuario.splice(0, arrayUsuario.length)
+        arrayComputadorIds.splice(0, arrayUsuario.length)
+        arrayComputador.splice(0, arrayUsuario.length)
 
     }else{
-        const resposta = arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index])
+        const resposta = arr1.length === arr2.length && arr1.every((value, index) => value == arr2[index])
         console.log(resposta)
         aumentarSequencia(resposta)
     }
 }
 
 
+
 function aumentarSequencia(resposta){
+    console.log(resposta)
     if(resposta === true){
-        sortear()
+        // sortear()
+        mostrarSequencia()
         arrayUsuario.splice(0, arrayUsuario.length)
     }else{
         alert('você errou! comece novamente')
         arrayComputador.splice(0, arrayComputador.length)
         arrayUsuario.splice(0, arrayUsuario.length)
+        arrayComputadorIds.splice(0, arrayUsuario.length)
     }
 
 }
 
 
+const arrayQuadrado = []
+console.log(arrayQuadrado)
+
+function transform(){
+    const quadrado = document.querySelectorAll('.box')
+    for(let i = 0; i < quadrado.length; i++){
+        const item = quadrado[i]
+        arrayQuadrado.push(item)
+    }
+}
+
+transform()
+
+function mostrarSequencia(){
+    setTimeout(()=>{
+        
+            
+    }, 1000)
+    for(let i = 0; i < arrayComputadorIds.length; i++){
+        console.log(arrayComputadorIds[i])
+        const corAtual = arrayComputadorIds[i]
+        console.log(corAtual)
+        const bordaNow = arrayQuadrado.find((box) => box.id == corAtual)
+        console.log(bordaNow)
+        bordaNow.classList.add('bordaWhite')
+        setTimeout(()=>{
+           bordaNow.classList.remove('bordaWhite')
+                
+        }, 1000)
+    }
+
+}
+
+
+
+
+
+
 function começarJogo(evento){
     arrayComputador.splice(0, arrayComputador.length)
     arrayUsuario.splice(0, arrayUsuario.length)
+    arrayComputadorIds.splice(0, arrayUsuario.length)
     console.log(evento)
     sortear()
 
