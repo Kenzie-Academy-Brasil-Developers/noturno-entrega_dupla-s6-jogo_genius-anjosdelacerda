@@ -80,9 +80,9 @@ let vermelho = document.querySelector('.divVermelho')
 
 
 
-const arrayComputador = []
-const arrayUsuario = []
-const arrayComputadorIds = []
+let arrayComputador = []
+let arrayUsuario = []
+let arrayComputadorIds = []
 
 //*** 
 //APERTA BOTÃO COMEÇAR JOGO => SORTEIO => COR DO ARRAY => ARRAYCOMP. 
@@ -105,7 +105,7 @@ function sortear(){
             
     }, 1000)
 
-    // arr[cor1].addEventListener('click', começarJogo)
+    
     arrayComputador.push(arr[cor1].id)
 
 }
@@ -134,7 +134,7 @@ function submeterJogada(evento){
     }
     console.log(arrayComputadorIds)
 
-    compararSequencias(arrayUsuario, arrayComputador)
+    compararSequencias(arrayComputador,arrayUsuario )
 
 }
 
@@ -157,10 +157,11 @@ function compararSequencias(arr1, arr2){
 
 
 function aumentarSequencia(resposta){
-    console.log(resposta)
+    
     if(resposta === true){
-        // sortear()
         mostrarSequencia()
+        sortear()
+    
         arrayUsuario.splice(0, arrayUsuario.length)
     }else{
         alert('você errou! comece novamente')
@@ -172,7 +173,7 @@ function aumentarSequencia(resposta){
 }
 
 
-const arrayQuadrado = []
+let arrayQuadrado = []
 console.log(arrayQuadrado)
 
 function transform(){
@@ -186,26 +187,16 @@ function transform(){
 transform()
 
 function mostrarSequencia(){
-    setTimeout(()=>{
-        
-            
-    }, 1000)
     for(let i = 0; i < arrayComputadorIds.length; i++){
-        console.log(arrayComputadorIds[i])
-        const corAtual = arrayComputadorIds[i]
-        console.log(corAtual)
-        const bordaNow = arrayQuadrado.find((box) => box.id == corAtual)
-        console.log(bordaNow)
-        bordaNow.classList.add('bordaWhite')
-        setTimeout(()=>{
-           bordaNow.classList.remove('bordaWhite')
+                let corAtual = arrayComputadorIds[i]
+                console.log(corAtual)
+
+                const box = arrayQuadrado.find((index) => index.id == corAtual)
+                console.log(box)
                 
-        }, 1000)
-    }
 
 }
-
-
+}
 
 
 
