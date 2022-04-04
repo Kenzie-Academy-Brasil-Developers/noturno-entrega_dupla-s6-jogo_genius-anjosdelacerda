@@ -4,13 +4,14 @@ const container     = document.querySelector('nav')
 const fundo         = document.createElement('div')
 const botao         = document.createElement('div')
 const nomeBotao     = document.createElement('h5')
-const nomeExc     = document.createElement('h5')
+const nomeExc       = document.createElement('h5')
 const nav           = document.createElement('nav')
 const divAzul       = document.createElement('div')
 const divVerde      = document.createElement('div')
 const divAmarelo    = document.createElement('div')
 const divVermelho   = document.createElement('div')
-const botaoExc         = document.createElement('div')
+const botaoExc      = document.createElement('div')
+const divBotoes     = document.createElement('div')
 
 container.id        = 'container'
 fundo.id            = 'fundo'
@@ -29,6 +30,7 @@ divAmarelo.id        = 2
 divVermelho.className = 'divVermelho'
 divVermelho.id       = 3
 botaoExc.id          = 'botaoExc'
+divBotoes.id         = 'divBotoes'
 
 
 divAmarelo.classList.add('box')
@@ -41,7 +43,8 @@ divVerde.addEventListener('click', jogadaUsuario)
 divVermelho.addEventListener('click', jogadaUsuario)
 
 container.appendChild(fundo)
-fundo.appendChild(botao)
+fundo.appendChild(divBotoes)
+divBotoes.appendChild(botao)
 botao.appendChild(nomeBotao)
 botaoExc.appendChild(nomeExc)
 fundo.appendChild(nav)
@@ -49,7 +52,7 @@ nav.appendChild(divAzul)
 nav.appendChild(divVerde)
 nav.appendChild(divAmarelo)
 nav.appendChild(divVermelho)
-fundo.appendChild(botaoExc)
+divBotoes.appendChild(botaoExc)
 
 
 //PASSO--A--PASSO
