@@ -45,6 +45,17 @@ img{
     cursor: pointer;
 }
 
+#botaoExc{
+    width: 55px;
+    height: 53px;
+    background-color: darkgrey;
+    border-radius: 20px;
+    margin-left: 120px;
+    margin-top: 15px;
+    cursor: pointer;
+    
+}
+
 #nav{
     display: flex;
     flex-wrap: wrap;
