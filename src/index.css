@@ -1,69 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
 
 body{
     background-image:url("https://thumbs.dreamstime.com/b/game-background-made-games-vector-illustration-32412378.jpg");
     margin: 0px;
     padding: 0px;
+    display: flex;
 }
-
 img{
     width: 0px;
 }
-
+/*ASIDE/ MODAL BOAS VINDAS/INTRUCAO/PLACAR DO JOGO*/
 .aside{
-    display: inline-block;
-    width: 303px;
-    height: 529px;
-    background-color: burlywood;
-    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    width: 499px;
+    height: 297px;
+    background-color: silver;
+    border-radius: 5px;
+    border: 5px solid white ;
+    align-items: center;
+    font-family: 'Roboto';
 }
 
+.nameGame{
+    font-weight: 500;
+    color: rgb(195, 86, 170);
+}
+
+.regraCont{
+    margin-left: 6px;
+}
+
+#boasVindas{
+    text-align: center;
+    }
+    
+#objetivoJogo{
+   text-align: center;
+    
+}
+.painelPlacar{
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 89px;
+    color: red;
+    background-color:rgb(102, 13, 13);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    border: 5px ridge white;
+    text-align: center;
+    width: 170px;
+    height: 80px;
+   
+}
+/*------JOGO--------*/
 #container{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin-top: 113px;
+    margin-top: 314px;
+    margin-right: 0px;
+    margin-left: 492px;
 }
-
 #fundo{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-self: center;
-    width: 303px;
-    height: 529px;
+    width: 558px;
+    height: 294px;
     background-color: black;
-    border-radius: 2px;
-    border: 2px ridge goldenrod;
+    border-radius: 27px;
+    border: 2px ridge black;
 }
-
-
-
 #botao{
-    width: 55px;
-    height: 53px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    display: inline-flex;
+    border: 2px solid white;
+    bottom: 222px;
+    width: 100px;
+    height: 55px;
     background-color: darkgrey;
     border-radius: 20px;
-    margin-left: 120px;
-    margin-top: 15px;
+    margin-left: 61px;
+    margin-top: 161px;
     cursor: pointer;
 }
-
 #botaoExc{
-    width: 55px;
-    height: 53px;
-    background-color: darkgrey;
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    display: inline-flex;
+    border: 2px solid white;
+    width: 100px;
+    height: 55px;
+    background-color:rgb(195, 86, 170);;
     border-radius: 20px;
-    margin-left: 120px;
-    margin-top: 15px;
+    bottom: 312px;
+    margin-left: 61px;
+    margin-top:0px;
     cursor: pointer;
     
 }
-
 #nav{
+    z-index: 1;
+    position: fixed;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 52px;
-    height: 0px;
+    left: 611px;
+    top: 364px;
+    margin-top: 0px;
+    margin-left: 100px;
+    height: 174px;
+    width: 302px;
 }
-
 .divAzul{
     width: 105px;
     height: 78px;
@@ -72,7 +133,6 @@ img{
     border-radius: 3px;
     cursor: pointer;
 }
-
 .divVerde{
     width: 105px;
     height: 78px;
@@ -80,7 +140,6 @@ img{
     border-radius: 3px;
     cursor: pointer;
 }
-
 .divAmarelo{
     width: 105px;
     height: 78px;
@@ -88,7 +147,6 @@ img{
     border-radius: 3px;
     cursor: pointer;
 }
-
 .divVermelho{
     width: 105px;
     height: 78px;
@@ -96,7 +154,60 @@ img{
     border-radius: 3px;
     cursor: pointer;
 }
-
+/*CLASSES DO CLASSLIST*/
 .bordaWhite{
     border: 5px ridge rgb(237, 237, 243);
+}
+/*BOTAO TESTE*/
+.idaline{
+    display: flex;
+    width: 35px;
+    height: 25px;
+}
+/*MODAL*/
+.modal{
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: center;
+    width: 250px;
+    height: 150px;
+    border-radius: 27px;
+    border: 5px solid white ;
+    background-color: rgb(236, 217, 176);
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    top:0px;
+    left: 596px;    
+}
+.invisivel{
+    display: none;    
+}
+.botaoModal{
+    width: 100px;
+    height: 40px;
+    border-radius: 3px;
+    border-color: white;
+}
+.botaoModal:hover{
+    background-color: rgb(145, 136, 106);
+    cursor: pointer;
+}
+.x{
+    width: 30px;
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 150px;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+.x:hover{
+    background-color: rgb(145, 136, 106);
+    cursor: pointer;
 }
