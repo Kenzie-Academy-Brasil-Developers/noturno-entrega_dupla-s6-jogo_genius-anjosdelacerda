@@ -3,6 +3,8 @@ const body          = document.querySelector('body')
 const container     = document.querySelector('nav')
 const fundo         = document.createElement('div')
 const botao         = document.createElement('div')
+const nomeBotao     = document.createElement('h5')
+const nomeExc     = document.createElement('h5')
 const nav           = document.createElement('nav')
 const divAzul       = document.createElement('div')
 const divVerde      = document.createElement('div')
@@ -13,6 +15,10 @@ const botaoExc         = document.createElement('div')
 container.id        = 'container'
 fundo.id            = 'fundo'
 botao.id            = 'botao'
+nomeBotao.className = 'botaoGo'
+nomeBotao.innerText = 'Go'
+nomeExc.className   = 'botaoSbt'
+nomeExc.innerText   = 'Submit'
 nav.id              = 'nav'
 divAzul.className   = 'divAzul'
 divAzul.id          = 0
@@ -36,12 +42,15 @@ divVermelho.addEventListener('click', jogadaUsuario)
 
 container.appendChild(fundo)
 fundo.appendChild(botao)
+botao.appendChild(nomeBotao)
+botaoExc.appendChild(nomeExc)
 fundo.appendChild(nav)
 nav.appendChild(divAzul)
 nav.appendChild(divVerde)
 nav.appendChild(divAmarelo)
 nav.appendChild(divVermelho)
-nav.appendChild(botaoExc)
+fundo.appendChild(botaoExc)
+
 
 //PASSO--A--PASSO
 //1-QUANDO CLICAR NO BOTÃO INCICAR O JOGO COMEÇA
@@ -63,7 +72,18 @@ modal 2: orientação sobre os botoes
 
 setTimeout(()=>{
     const aside     = document.createElement('aside')
-    aside.className = 'aside'
+    aside.innerHTML = `
+    <h1 class="nameGame"> Genius Kenzie </h1>
+    <h2 class="regraGame"> Como Jogar </h2>
+    <div class="regraCont">
+    <p>Clique no botão "Go" para iniciar o jogo! </p>
+    <p> O Genius sorteatá uma cor aleatória a cada rodada, e o jogador
+    deverá memorizar a sequência e submeter a sua jogada clicando no botão
+    "submit"! </p>
+    <p> O jogador vence quando acertar 7 sequências! </p>
+    </div>
+    `
+    aside.classList.add('aside')
     body.appendChild(aside)
 },1000)
 
