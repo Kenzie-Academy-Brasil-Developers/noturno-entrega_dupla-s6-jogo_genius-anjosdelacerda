@@ -18,13 +18,17 @@ img{
 .aside{
     display: flex;
     flex-direction: column;
-    width: 499px;
-    height: 297px;
+    width: 399vh;
+    height: 50%;
     background-color: silver;
     border-radius: 5px;
     border: 5px solid white ;
     align-items: center;
     font-family: 'Roboto';
+}
+
+.aside p{
+    font-size: 1rem;
 }
 
 .nameGame{
@@ -70,6 +74,7 @@ img{
     margin-left: 492px;
 }
 #fundo{
+    position: relative;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -79,6 +84,9 @@ img{
     background-color: black;
     border-radius: 27px;
     border: 2px ridge black;
+    margin-right: 120px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 #botao{
     /* z-index: 1; */
@@ -119,12 +127,12 @@ img{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    left: 611px;
-    top: 364px;
+    left: 151px;
+    top: 59px;
     margin-top: 0px;
     margin-left: 100px;
     height: 174px;
-    width: 302px;
+    width: 272px;
 }
 
 #divBotoes{
